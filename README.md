@@ -1,6 +1,6 @@
 # env
 
-Manage environment variables for the whole team savely
+Manage environment variables for the whole team safely
 
 ## How to set up
 

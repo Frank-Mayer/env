@@ -1,0 +1,90 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/Frank-Mayer/env/internal/config",
+    "$ref": "#/$defs/Config",
+    "$defs": {
+        "Config": {
+            "properties": {
+                "$schema": {
+                    "type": "string"
+                },
+                "all": {
+                    "items": {
+                        "$ref": "#/$defs/Variable"
+                    },
+                    "type": "array",
+                    "title": "All",
+                    "description": "Variables that are known to all profiles"
+                },
+                "profiles": {
+                    "items": {
+                        "$ref": "#/$defs/Profile"
+                    },
+                    "type": "array",
+                    "title": "Profiles",
+                    "description": "Profiles of environment variables"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "all",
+                "profiles"
+            ]
+        },
+        "Profile": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Name of the profile",
+                    "examples": [
+                        "dev",
+                        "prod"
+                    ]
+                },
+                "variables": {
+                    "items": {
+                        "$ref": "#/$defs/Variable"
+                    },
+                    "type": "array",
+                    "title": "Variables",
+                    "description": "Variables of the profile"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "name",
+                "variables"
+            ]
+        },
+        "Variable": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "pattern": "^[A-Z_]+$",
+                    "title": "Key",
+                    "description": "Key of the variable",
+                    "examples": [
+                        "DB_HOST"
+                    ]
+                },
+                "value": {
+                    "type": "string",
+                    "title": "Value",
+                    "description": "Value of the variable",
+                    "examples": [
+                        "localhost"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ]
+        }
+    }
+}

@@ -3,6 +3,10 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - "config.json"
+      - "main.json"
+      - "profiles/*.env"
   workflow_dispatch:
 permissions:
   contents: read

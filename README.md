@@ -18,9 +18,9 @@ go run ./cmd/get/ [profile name]
 
 ## Files
 
-`/config.json` configuration for all profiles. Encrypted using master password.
-`/main.json` contains keys for all profiles. Encrypted using master password.
-`/profiles/[profile name].env` env file containing profiles variables.
+- `/config.json` configuration for all profiles. Encrypted using master password.
+- `/main.json` contains keys for all profiles. Encrypted using master password.
+- `/profiles/[profile name].env` env file containing profiles variables.
 
 ## How to request
 

@@ -106,7 +106,7 @@ async function importEnv(url: string, key: string) {
     if (i > 0) {
       const key = line.substring(0, i);
       const value = line.substring(i + 1);
-      console.log("importing", key, value);
+      console.debug("importing", key);
       process.env[key] = value;
     }
   }
